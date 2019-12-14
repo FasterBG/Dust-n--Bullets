@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour, IDamageble
 
     void Update()
     {
-        Debug.Log(health);
         Move();
     }
 

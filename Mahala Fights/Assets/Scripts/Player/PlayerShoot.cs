@@ -15,18 +15,22 @@ public class PlayerShoot : MonoBehaviour
 
     private float cooldownLeft = 0;
 
+    private PlayerWeapon pw;
+
     private void Update()
     {
+        pw = GetComponent<PlayerWeapon>();
         Shoot();
     }
 
     private void Shoot()
     {
         cooldownLeft += Time.deltaTime;
-        if(Input.GetKey(SHOOT) && cooldownLeft > MAX_SHOOT_COOLDOWN)
+        if(Input.GetKey(SHOOT) && cooldownLeft > MAX_SHOOT_COOLDOWN && pw.haveAmmo())
         {
             cooldownLeft = 0;
             Instantiate(bullet, firePoint.position, transform.rotation);
+            pw.takeAmmo();
         }
     }
 }
