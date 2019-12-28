@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour, IDamageble
 {
     [SerializeField]
     private float MAX_HEALTH;
-
     private float health;
 
     [SerializeField]
@@ -20,6 +19,8 @@ public class PlayerController : MonoBehaviour, IDamageble
     private KeyCode down;
     [SerializeField]
     private KeyCode right;
+    [SerializeField]
+    public KeyCode pick;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -67,5 +68,10 @@ public class PlayerController : MonoBehaviour, IDamageble
     public void TakeDamage(float damage)
     {
         health -= damage;
+    }
+
+    public float returnHealthFormMaxHealth()
+    {
+        return health / MAX_HEALTH;
     }
 }
