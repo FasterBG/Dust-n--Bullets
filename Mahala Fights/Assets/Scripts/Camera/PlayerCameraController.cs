@@ -27,6 +27,8 @@ public class PlayerCameraController : MonoBehaviour
 
     void Update()
     {
+        holderPos.position = new Vector3(playerPos.position.x, playerPos.position.y, startZ);
+        transform.position = holderPos.position;
         if (shake)
         {
             StartCoroutine(cameraShake.Shake(duration, magnitude));

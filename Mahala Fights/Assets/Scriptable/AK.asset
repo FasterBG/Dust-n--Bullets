@@ -15,7 +15,7 @@ MonoBehaviour:
   name: AK-47
   type: 1
   image: {fileID: 21300000, guid: dcfef7d484646ed4bb7fa0229160b902, type: 3}
-  bulletSpeed: 40
+  bulletSpeed: 30
   damage: 5
   reloadSpeed: 2
   shootTimeOut: 0.2

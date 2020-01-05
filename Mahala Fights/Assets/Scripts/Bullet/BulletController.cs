@@ -12,6 +12,12 @@ public class BulletController : MonoBehaviour
     public float damage;
     [SerializeField]
     private GameObject impactEF;
+    private Rigidbody2D rigidbody;
+
+    private void Start()
+    {
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
@@ -20,7 +26,7 @@ public class BulletController : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        rigidbody.velocity = transform.up * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
